@@ -1,5 +1,6 @@
 import type { MethodObject } from '../method_object.ts';
 
+
 /**
  * Get whether the server hides online player information from status queries
  */

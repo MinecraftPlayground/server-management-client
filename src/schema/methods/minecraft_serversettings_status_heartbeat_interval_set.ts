@@ -1,5 +1,6 @@
 import type { MethodObject } from '../method_object.ts';
 
+
 /**
  * Set the interval in seconds between server status heartbeats
  */

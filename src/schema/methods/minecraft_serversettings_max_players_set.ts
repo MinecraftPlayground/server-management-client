@@ -1,5 +1,6 @@
 import type { MethodObject } from '../method_object.ts';
 
+
 /**
  * Set the maximum number of players allowed to connect to the server
  */

@@ -1,5 +1,6 @@
 import type { MethodObject } from '../method_object.ts';
 
+
 /**
  * Enable or disable accepting player transfers from other servers
  */

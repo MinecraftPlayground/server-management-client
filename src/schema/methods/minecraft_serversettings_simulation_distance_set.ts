@@ -1,5 +1,6 @@
 import type { MethodObject } from '../method_object.ts';
 
+
 /**
  * Set the server's simulation distance in chunks
  */

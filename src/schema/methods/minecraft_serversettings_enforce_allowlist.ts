@@ -1,5 +1,6 @@
 import type { MethodObject } from '../method_object.ts';
 
+
 /**
  * Get whether allowlist enforcement is enabled (kicks players immediately when removed from allowlist)
  */

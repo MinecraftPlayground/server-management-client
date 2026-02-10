@@ -1,6 +1,7 @@
 import type { Difficulty } from '../components/schemas/difficulty.ts';
 import type { MethodObject } from '../method_object.ts';
 
+
 /**
  * Set the difficulty level of the server
  */
