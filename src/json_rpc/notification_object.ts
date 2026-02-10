@@ -1,10 +1,9 @@
 import type { MethodNames } from './schema/methods/minecraft/index.ts';
 
-
-export interface RequestObject {
+export interface NotificationObject {
   jsonrpc : '2.0',
   // deno-lint-ignore ban-types
   method : MethodNames | (string & {}),
-  params? : unknown,
-  id : string | number | null
+  params? : unknown
+  id? : never
 }
