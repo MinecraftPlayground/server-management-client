@@ -1,4 +1,4 @@
-import type { ErrorObject } from './error_object.ts';
+import type { ErrorObject } from '../error_object.ts';
 
 export type ResponseObject = {
   jsonrpc : '2.0',
