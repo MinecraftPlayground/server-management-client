@@ -1,5 +1,5 @@
-import type { NotificationObjectDefinition } from './notification_object_definition.ts';
-import type { MethodObjectDefinition } from './method_object_definition.ts';
+import type { Definition } from './definition.ts';
+
 
 /**
  * Extract the result type from a method by its name
@@ -13,6 +13,6 @@ import type { MethodObjectDefinition } from './method_object_definition.ts';
  * ```
  */
 export type ExtractResult<
-  Methods extends MethodObjectDefinition | NotificationObjectDefinition,
+  Methods extends Definition,
   MethodName extends string
 > = Extract<Methods, { name: MethodName }>['result'];

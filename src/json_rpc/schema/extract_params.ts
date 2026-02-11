@@ -1,5 +1,5 @@
-import type { MethodObjectDefinition } from './method_object_definition.ts';
-import type { NotificationObjectDefinition } from './notification_object_definition.ts';
+import type { Definition } from './definition.ts';
+
 
 /**
  * Extract the params type from a method by its name
@@ -16,6 +16,6 @@ import type { NotificationObjectDefinition } from './notification_object_definit
  * ```
  */
 export type ExtractParams<
-  Methods extends MethodObjectDefinition | NotificationObjectDefinition,
+  Methods extends Definition,
   MethodName extends string
 > = Extract<Methods, { name: MethodName }>['params'];

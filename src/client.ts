@@ -1,8 +1,8 @@
-import type { ExtractParams, ExtractResult, MethodObjectDefinition, NotificationObjectDefinition, ParamsNever } from './json_rpc/schema/index.ts';
+import type { Definition, ExtractParams, ExtractResult, NotificationObjectDefinition, ParamsNever } from './json_rpc/schema/index.ts';
 import type { minecraft } from './definitions/index.ts';
 
 
-export class Client<Definitions extends MethodObjectDefinition | NotificationObjectDefinition = minecraft.methods.All> {
+export class Client<Definitions extends Definition = minecraft.All> {
   private requestId : number = 0;
   constructor() {
 
