@@ -1,7 +1,6 @@
 {
-  "name": "",
   "version": "0.1.0",
-  "exports": {},
+  "exports": { },
   "tasks": {
     "run": {
       "description": "Run the main application.",
