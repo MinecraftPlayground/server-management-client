@@ -1,4 +1,8 @@
+import type { MinecraftAllowlist } from './definitions/minecraft_allowlist.ts';
+import type { MinecraftAllowlistAdd } from './definitions/minecraft_allowlist_add.ts';
 import type { MinecraftAllowlistClear } from './definitions/minecraft_allowlist_clear.ts';
+import type { MinecraftAllowlistRemove } from './definitions/minecraft_allowlist_remove.ts';
+import type { MinecraftAllowlistSet } from './definitions/minecraft_allowlist_set.ts';
 import type { MinecraftBans } from './definitions/minecraft_bans.ts';
 import type { MinecraftBansAdd } from './definitions/minecraft_bans_add.ts';
 import type { MinecraftBansClear } from './definitions/minecraft_bans_clear.ts';
@@ -81,93 +85,98 @@ import type { MinecraftServersettingsViewDistance } from './definitions/minecraf
 import type { MinecraftServersettingsViewDistanceSet } from './definitions/minecraft_serversettings_view_distance_set.ts';
 
 
-/**
- * Union type of all method names
- */
-export type MethodNames = 
-  | MinecraftAllowlistClear['name']
-  | MinecraftBans['name']
-  | MinecraftBansAdd['name']
-  | MinecraftBansClear['name']
-  | MinecraftBansRemove['name']
-  | MinecraftBansSet['name']
-  | MinecraftGamerules['name']
-  | MinecraftGamerulesUpdate['name']
-  | MinecraftIpBans['name']
-  | MinecraftIpBansAdd['name']
-  | MinecraftIpBansClear['name']
-  | MinecraftIpBansRemove['name']
-  | MinecraftIpBansSet['name']
-  | MinecraftNotificationAllowlistAdded['name']
-  | MinecraftNotificationAllowlistRemoved['name']
-  | MinecraftNotificationBansAdded['name']
-  | MinecraftNotificationBansRemoved['name']
-  | MinecraftNotificationGamerulesUpdated['name']
-  | MinecraftNotificationIpBansAdded['name']
-  | MinecraftNotificationIpBansRemoved['name']
-  | MinecraftNotificationOperatorsAdded['name']
-  | MinecraftNotificationOperatorsRemoved['name']
-  | MinecraftNotificationPlayersJoined['name']
-  | MinecraftNotificationPlayersLeft['name']
-  | MinecraftNotificationServerActivity['name']
-  | MinecraftNotificationServerSaved['name']
-  | MinecraftNotificationServerSaving['name']
-  | MinecraftNotificationServerStarted['name']
-  | MinecraftNotificationServerStatus['name']
-  | MinecraftNotificationServerStopping['name']
-  | MinecraftOperators['name']
-  | MinecraftOperatorsAdd['name']
-  | MinecraftOperatorsClear['name']
-  | MinecraftOperatorsRemove['name']
-  | MinecraftOperatorsSet['name']
-  | MinecraftPlayers['name']
-  | MinecraftPlayersKick['name']
-  | MinecraftServerSave['name']
-  | MinecraftServerStatus['name']
-  | MinecraftServerStop['name']
-  | MinecraftServerSystemMessage['name']
-  | MinecraftServersettingsAcceptTransfers['name']
-  | MinecraftServersettingsAcceptTransfersSet['name']
-  | MinecraftServersettingsAllowFlight['name']
-  | MinecraftServersettingsAllowFlightSet['name']
-  | MinecraftServersettingsAutosave['name']
-  | MinecraftServersettingsAutosaveSet['name']
-  | MinecraftServersettingsDifficulty['name']
-  | MinecraftServersettingsDifficultySet['name']
-  | MinecraftServersettingsEnforceAllowlist['name']
-  | MinecraftServersettingsEnforceAllowlistSet['name']
-  | MinecraftServersettingsEntityBroadcastRange['name']
-  | MinecraftServersettingsEntityBroadcastRangeSet['name']
-  | MinecraftServersettingsForceGameMode['name']
-  | MinecraftServersettingsForceGameModeSet['name']
-  | MinecraftServersettingsGameMode['name']
-  | MinecraftServersettingsGameModeSet['name']
-  | MinecraftServersettingsHideOnlinePlayers['name']
-  | MinecraftServersettingsHideOnlinePlayersSet['name']
-  | MinecraftServersettingsMaxPlayers['name']
-  | MinecraftServersettingsMaxPlayersSet['name']
-  | MinecraftServersettingsMotd['name']
-  | MinecraftServersettingsMotdSet['name']
-  | MinecraftServersettingsOperatorUserPermissionLevel['name']
-  | MinecraftServersettingsOperatorUserPermissionLevelSet['name']
-  | MinecraftServersettingsPauseWhenEmptySeconds['name']
-  | MinecraftServersettingsPauseWhenEmptySecondsSet['name']
-  | MinecraftServersettingsPlayerIdleTimeout['name']
-  | MinecraftServersettingsPlayerIdleTimeoutSet['name']
-  | MinecraftServersettingsSimulationDistance['name']
-  | MinecraftServersettingsSimulationDistanceSet['name']
-  | MinecraftServersettingsSpawnProtectionRadius['name']
-  | MinecraftServersettingsSpawnProtectionRadiusSet['name']
-  | MinecraftServersettingsStatusHeartbeatInterval['name']
-  | MinecraftServersettingsStatusHeartbeatIntervalSet['name']
-  | MinecraftServersettingsStatusReplies['name']
-  | MinecraftServersettingsStatusRepliesSet['name']
-  | MinecraftServersettingsUseAllowlist['name']
-  | MinecraftServersettingsUseAllowlistSet['name']
-  | MinecraftServersettingsViewDistance['name']
-  | MinecraftServersettingsViewDistanceSet['name'];
+export type Methods =
+  | MinecraftAllowlist
+  | MinecraftAllowlistAdd
+  | MinecraftAllowlistClear
+  | MinecraftAllowlistRemove
+  | MinecraftAllowlistSet
+  | MinecraftBans
+  | MinecraftBansAdd
+  | MinecraftBansClear
+  | MinecraftBansRemove
+  | MinecraftBansSet
+  | MinecraftGamerules
+  | MinecraftGamerulesUpdate
+  | MinecraftIpBans
+  | MinecraftIpBansAdd
+  | MinecraftIpBansClear
+  | MinecraftIpBansRemove
+  | MinecraftIpBansSet
+  | MinecraftNotificationAllowlistAdded
+  | MinecraftNotificationAllowlistRemoved
+  | MinecraftNotificationBansAdded
+  | MinecraftNotificationBansRemoved
+  | MinecraftNotificationGamerulesUpdated
+  | MinecraftNotificationIpBansAdded
+  | MinecraftNotificationIpBansRemoved
+  | MinecraftNotificationOperatorsAdded
+  | MinecraftNotificationOperatorsRemoved
+  | MinecraftNotificationPlayersJoined
+  | MinecraftNotificationPlayersLeft
+  | MinecraftNotificationServerActivity
+  | MinecraftNotificationServerSaved
+  | MinecraftNotificationServerSaving
+  | MinecraftNotificationServerStarted
+  | MinecraftNotificationServerStatus
+  | MinecraftNotificationServerStopping
+  | MinecraftOperators
+  | MinecraftOperatorsAdd
+  | MinecraftOperatorsClear
+  | MinecraftOperatorsRemove
+  | MinecraftOperatorsSet
+  | MinecraftPlayers
+  | MinecraftPlayersKick
+  | MinecraftServerSave
+  | MinecraftServerStatus
+  | MinecraftServerStop
+  | MinecraftServerSystemMessage
+  | MinecraftServersettingsAcceptTransfers
+  | MinecraftServersettingsAcceptTransfersSet
+  | MinecraftServersettingsAllowFlight
+  | MinecraftServersettingsAllowFlightSet
+  | MinecraftServersettingsAutosave
+  | MinecraftServersettingsAutosaveSet
+  | MinecraftServersettingsDifficulty
+  | MinecraftServersettingsDifficultySet
+  | MinecraftServersettingsEnforceAllowlist
+  | MinecraftServersettingsEnforceAllowlistSet
+  | MinecraftServersettingsEntityBroadcastRange
+  | MinecraftServersettingsEntityBroadcastRangeSet
+  | MinecraftServersettingsForceGameMode
+  | MinecraftServersettingsForceGameModeSet
+  | MinecraftServersettingsGameMode
+  | MinecraftServersettingsGameModeSet
+  | MinecraftServersettingsHideOnlinePlayers
+  | MinecraftServersettingsHideOnlinePlayersSet
+  | MinecraftServersettingsMaxPlayers
+  | MinecraftServersettingsMaxPlayersSet
+  | MinecraftServersettingsMotd
+  | MinecraftServersettingsMotdSet
+  | MinecraftServersettingsOperatorUserPermissionLevel
+  | MinecraftServersettingsOperatorUserPermissionLevelSet
+  | MinecraftServersettingsPauseWhenEmptySeconds
+  | MinecraftServersettingsPauseWhenEmptySecondsSet
+  | MinecraftServersettingsPlayerIdleTimeout
+  | MinecraftServersettingsPlayerIdleTimeoutSet
+  | MinecraftServersettingsSimulationDistance
+  | MinecraftServersettingsSimulationDistanceSet
+  | MinecraftServersettingsSpawnProtectionRadius
+  | MinecraftServersettingsSpawnProtectionRadiusSet
+  | MinecraftServersettingsStatusHeartbeatInterval
+  | MinecraftServersettingsStatusHeartbeatIntervalSet
+  | MinecraftServersettingsStatusReplies
+  | MinecraftServersettingsStatusRepliesSet
+  | MinecraftServersettingsUseAllowlist
+  | MinecraftServersettingsUseAllowlistSet
+  | MinecraftServersettingsViewDistance
+  | MinecraftServersettingsViewDistanceSet;
 
+export type { MinecraftAllowlist };
+export type { MinecraftAllowlistAdd };
 export type { MinecraftAllowlistClear };
+export type { MinecraftAllowlistRemove };
+export type { MinecraftAllowlistSet };
 export type { MinecraftBans };
 export type { MinecraftBansAdd };
 export type { MinecraftBansClear };
