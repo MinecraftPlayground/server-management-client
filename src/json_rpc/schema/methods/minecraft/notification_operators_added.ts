@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Player was oped
  */
-export type MinecraftNotificationOperatorsAdded = MethodObject<
+export type NotificationOperatorsAdded = MethodObject<
   'minecraft:notification/operators/added',
   [{ player : OperatorObject }]
 >

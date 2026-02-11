@@ -6,7 +6,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Kick players
  */
-export type MinecraftPlayersKick = MethodObject<
+export type PlayersKick = MethodObject<
   'minecraft:players/kick',
   [{ kick : KickPlayerObject[] }],
   { kicked? : PlayerObject[] }

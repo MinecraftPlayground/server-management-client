@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Set the difficulty level of the server
  */
-export type MinecraftServersettingsDifficultySet = MethodObject<
+export type ServersettingsDifficultySet = MethodObject<
   'minecraft:serversettings/difficulty/set',
   [{ difficulty : Difficulty }],
   { difficulty? : Difficulty }

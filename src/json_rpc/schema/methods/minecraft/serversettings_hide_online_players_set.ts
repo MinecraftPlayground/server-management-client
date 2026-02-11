@@ -4,7 +4,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Enable or disable hiding online player information from status queries
  */
-export type MinecraftServersettingsHideOnlinePlayersSet = MethodObject<
+export type ServersettingsHideOnlinePlayersSet = MethodObject<
   'minecraft:serversettings/hide_online_players/set',
   [{ hide : boolean }],
   { hidden? : boolean }

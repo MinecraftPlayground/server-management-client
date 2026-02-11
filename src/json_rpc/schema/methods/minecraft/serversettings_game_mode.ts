@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Get the server's default game mode
  */
-export type MinecraftServersettingsGameMode = MethodObject<
+export type ServersettingsGameMode = MethodObject<
   'minecraft:serversettings/game_mode',
   never[],
   { mode? : GameType }

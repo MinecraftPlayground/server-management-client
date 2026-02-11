@@ -6,7 +6,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Deop players
  */
-export type MinecraftOperatorsRemove = MethodObject<
+export type OperatorsRemove = MethodObject<
   'minecraft:operators/remove',
   [{ remove : PlayerObject[] }],
   { operators? : OperatorObject[] }

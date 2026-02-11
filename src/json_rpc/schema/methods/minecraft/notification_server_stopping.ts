@@ -4,7 +4,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Server shutting down
  */
-export type MinecraftNotificationServerStopping = MethodObject<
+export type NotificationServerStopping = MethodObject<
   'minecraft:notification/server/stopping',
   never[]
 >

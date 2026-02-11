@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Set all oped players
  */
-export type MinecraftOperatorsSet = MethodObject<
+export type OperatorsSet = MethodObject<
   'minecraft:operators/set',
   [{ operators : OperatorObject[] }],
   { operators? : OperatorObject[] }

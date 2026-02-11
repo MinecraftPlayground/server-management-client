@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Get the available game rule keys and their current values
  */
-export type MinecraftGamerules = MethodObject<
+export type Gamerules = MethodObject<
   'minecraft:gamerules',
   never[],
   { gamerules? : TypedGameRuleObject[] }

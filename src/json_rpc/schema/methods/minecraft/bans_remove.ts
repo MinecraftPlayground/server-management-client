@@ -6,7 +6,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Remove players from ban list
  */
-export type MinecraftBansRemove = MethodObject<
+export type BansRemove = MethodObject<
   'minecraft:bans/remove',
   [{ remove : PlayerObject[] }],
   { banlist? : UserBanObject[] }
