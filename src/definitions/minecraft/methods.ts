@@ -15,23 +15,6 @@ import type { MinecraftIpBansAdd } from './methods/minecraft_ip_bans_add.ts';
 import type { MinecraftIpBansClear } from './methods/minecraft_ip_bans_clear.ts';
 import type { MinecraftIpBansRemove } from './methods/minecraft_ip_bans_remove.ts';
 import type { MinecraftIpBansSet } from './methods/minecraft_ip_bans_set.ts';
-import type { MinecraftNotificationAllowlistAdded } from './methods/minecraft_notification_allowlist_added.ts';
-import type { MinecraftNotificationAllowlistRemoved } from './methods/minecraft_notification_allowlist_removed.ts';
-import type { MinecraftNotificationBansAdded } from './methods/minecraft_notification_bans_added.ts';
-import type { MinecraftNotificationBansRemoved } from './methods/minecraft_notification_bans_removed.ts';
-import type { MinecraftNotificationGamerulesUpdated } from './methods/minecraft_notification_gamerules_updated.ts';
-import type { MinecraftNotificationIpBansAdded } from './methods/minecraft_notification_ip_bans_added.ts';
-import type { MinecraftNotificationIpBansRemoved } from './methods/minecraft_notification_ip_bans_removed.ts';
-import type { MinecraftNotificationOperatorsAdded } from './methods/minecraft_notification_operators_added.ts';
-import type { MinecraftNotificationOperatorsRemoved } from './methods/minecraft_notification_operators_removed.ts';
-import type { MinecraftNotificationPlayersJoined } from './methods/minecraft_notification_players_joined.ts';
-import type { MinecraftNotificationPlayersLeft } from './methods/minecraft_notification_players_left.ts';
-import type { MinecraftNotificationServerActivity } from './methods/minecraft_notification_server_activity.ts';
-import type { MinecraftNotificationServerSaved } from './methods/minecraft_notification_server_saved.ts';
-import type { MinecraftNotificationServerSaving } from './methods/minecraft_notification_server_saving.ts';
-import type { MinecraftNotificationServerStarted } from './methods/minecraft_notification_server_started.ts';
-import type { MinecraftNotificationServerStatus } from './methods/minecraft_notification_server_status.ts';
-import type { MinecraftNotificationServerStopping } from './methods/minecraft_notification_server_stopping.ts';
 import type { MinecraftOperators } from './methods/minecraft_operators.ts';
 import type { MinecraftOperatorsAdd } from './methods/minecraft_operators_add.ts';
 import type { MinecraftOperatorsClear } from './methods/minecraft_operators_clear.ts';
@@ -103,23 +86,6 @@ export type All =
   | MinecraftIpBansClear
   | MinecraftIpBansRemove
   | MinecraftIpBansSet
-  | MinecraftNotificationAllowlistAdded
-  | MinecraftNotificationAllowlistRemoved
-  | MinecraftNotificationBansAdded
-  | MinecraftNotificationBansRemoved
-  | MinecraftNotificationGamerulesUpdated
-  | MinecraftNotificationIpBansAdded
-  | MinecraftNotificationIpBansRemoved
-  | MinecraftNotificationOperatorsAdded
-  | MinecraftNotificationOperatorsRemoved
-  | MinecraftNotificationPlayersJoined
-  | MinecraftNotificationPlayersLeft
-  | MinecraftNotificationServerActivity
-  | MinecraftNotificationServerSaved
-  | MinecraftNotificationServerSaving
-  | MinecraftNotificationServerStarted
-  | MinecraftNotificationServerStatus
-  | MinecraftNotificationServerStopping
   | MinecraftOperators
   | MinecraftOperatorsAdd
   | MinecraftOperatorsClear
@@ -189,23 +155,6 @@ export type { MinecraftIpBansAdd };
 export type { MinecraftIpBansClear };
 export type { MinecraftIpBansRemove };
 export type { MinecraftIpBansSet };
-export type { MinecraftNotificationAllowlistAdded };
-export type { MinecraftNotificationAllowlistRemoved };
-export type { MinecraftNotificationBansAdded };
-export type { MinecraftNotificationBansRemoved };
-export type { MinecraftNotificationGamerulesUpdated };
-export type { MinecraftNotificationIpBansAdded };
-export type { MinecraftNotificationIpBansRemoved };
-export type { MinecraftNotificationOperatorsAdded };
-export type { MinecraftNotificationOperatorsRemoved };
-export type { MinecraftNotificationPlayersJoined };
-export type { MinecraftNotificationPlayersLeft };
-export type { MinecraftNotificationServerActivity };
-export type { MinecraftNotificationServerSaved };
-export type { MinecraftNotificationServerSaving };
-export type { MinecraftNotificationServerStarted };
-export type { MinecraftNotificationServerStatus };
-export type { MinecraftNotificationServerStopping };
 export type { MinecraftOperators };
 export type { MinecraftOperatorsAdd };
 export type { MinecraftOperatorsClear };

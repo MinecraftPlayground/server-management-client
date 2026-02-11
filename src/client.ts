@@ -1,7 +1,5 @@
-import type { ExtractParams, ExtractResult, ParamsNever } from './json_rpc/schema/index.ts';
+import type { ExtractParams, ExtractResult, MethodObjectDefinition, NotificationObjectDefinition, ParamsNever } from './json_rpc/schema/index.ts';
 import type { minecraft } from './definitions/index.ts';
-import type { MethodObjectDefinition } from './json_rpc/schema/method_object_definition.ts';
-import type { NotificationObjectDefinition } from './json_rpc/schema/notification_object_definition.ts';
 
 
 export class Client<Definitions extends MethodObjectDefinition | NotificationObjectDefinition = minecraft.methods.All> {
