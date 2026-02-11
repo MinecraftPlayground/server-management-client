@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Get the ban list
  */
-export type Bans = MethodObject<
+export type MinecraftBans = MethodObject<
   'minecraft:bans',
   never[],
   { banlist? : UserBanObject[] }

@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Deop all players
  */
-export type OperatorsClear = MethodObject<
+export type MinecraftOperatorsClear = MethodObject<
   'minecraft:operators/clear',
   never[],
   { operators? : OperatorObject[] }

@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Clear all players in ban list
  */
-export type BansClear = MethodObject<
+export type MinecraftBansClear = MethodObject<
   'minecraft:bans/clear',
   never[],
   { banlist? : UserBanObject[] }

@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Set the banlist
  */
-export type BansSet = MethodObject<
+export type MinecraftBansSet = MethodObject<
   'minecraft:bans/set',
   [{ bans : UserBanObject[] }],
   { banlist? : UserBanObject[] }

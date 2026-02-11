@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Server status heartbeat
  */
-export type NotificationServerStatus = MethodObject<
+export type MinecraftNotificationServerStatus = MethodObject<
   'minecraft:notification/server/status',
   [{ status : ServerStateObject }]
 >

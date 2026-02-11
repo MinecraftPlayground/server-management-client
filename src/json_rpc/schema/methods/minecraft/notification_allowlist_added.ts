@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Player was added to allowlist
  */
-export type NotificationAllowlistAdded = MethodObject<
+export type MinecraftNotificationAllowlistAdded = MethodObject<
   'minecraft:notification/allowlist/added',
   [{ player : PlayerObject }]
 >

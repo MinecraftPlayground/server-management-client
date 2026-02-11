@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Player was deoped
  */
-export type NotificationOperatorsRemoved = MethodObject<
+export type MinecraftNotificationOperatorsRemoved = MethodObject<
   'minecraft:notification/operators/removed',
   [{ player : OperatorObject }]
 >

@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Player joined
  */
-export type NotificationPlayersJoined = MethodObject<
+export type MinecraftNotificationPlayersJoined = MethodObject<
   'minecraft:notification/players/joined',
   [{ player : PlayerObject }]
 >

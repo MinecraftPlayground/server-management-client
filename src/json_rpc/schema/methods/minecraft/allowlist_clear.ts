@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Clear all players in allowlist
  */
-export type AllowlistClear = MethodObject<
+export type MinecraftAllowlistClear = MethodObject<
   'minecraft:allowlist/clear',
   never[],
   { allowlist? : PlayerObject[] }

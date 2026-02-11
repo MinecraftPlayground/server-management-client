@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Get server status
  */
-export type ServerStatus = MethodObject<
+export type MinecraftServerStatus = MethodObject<
   'minecraft:server/status',
   never[],
   { status? : ServerStateObject }

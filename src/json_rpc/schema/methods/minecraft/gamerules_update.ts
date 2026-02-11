@@ -6,7 +6,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Update game rule value
  */
-export type GamerulesUpdate = MethodObject<
+export type MinecraftGamerulesUpdate = MethodObject<
   'minecraft:gamerules/update',
   [{ gamerule : UntypedGameRuleObject }],
   { gamerule? : TypedGameRuleObject }

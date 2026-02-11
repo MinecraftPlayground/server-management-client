@@ -6,7 +6,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Add ip to ban list
  */
-export type IpBansAdd = MethodObject<
+export type MinecraftIpBansAdd = MethodObject<
   'minecraft:ip_bans/add',
   [{ add : IncomingIpBanObject[] }],
   { banlist? : IpBanObject[] }

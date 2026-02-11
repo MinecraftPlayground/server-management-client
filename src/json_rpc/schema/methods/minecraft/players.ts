@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Get all connected players
  */
-export type Players = MethodObject<
+export type MinecraftPlayers = MethodObject<
   'minecraft:players',
   never[],
   { players? : PlayerObject[] }

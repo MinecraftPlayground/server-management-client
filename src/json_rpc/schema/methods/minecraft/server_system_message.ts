@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Send a system message
  */
-export type ServerSystemMessage = MethodObject<
+export type MinecraftServerSystemMessage = MethodObject<
   'minecraft:server/system_message',
   [{ message : SystemMessageObject }],
   { sent? : boolean }

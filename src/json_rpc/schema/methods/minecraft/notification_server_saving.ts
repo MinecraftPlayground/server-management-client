@@ -4,7 +4,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Server save started
  */
-export type NotificationServerSaving = MethodObject<
+export type MinecraftNotificationServerSaving = MethodObject<
   'minecraft:notification/server/saving',
   never[]
 >

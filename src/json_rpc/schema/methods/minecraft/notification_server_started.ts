@@ -4,7 +4,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Server started
  */
-export type NotificationServerStarted = MethodObject<
+export type MinecraftNotificationServerStarted = MethodObject<
   'minecraft:notification/server/started',
   never[]
 >

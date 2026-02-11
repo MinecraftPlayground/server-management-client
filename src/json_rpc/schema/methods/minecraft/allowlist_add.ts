@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Add players to allowlist
  */
-export type AllowlistAdd = MethodObject<
+export type MinecraftAllowlistAdd = MethodObject<
   'minecraft:allowlist/add',
   [{ add : PlayerObject[] }],
   { allowlist? : PlayerObject[] }

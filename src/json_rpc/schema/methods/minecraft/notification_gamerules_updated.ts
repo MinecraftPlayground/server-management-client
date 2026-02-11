@@ -5,7 +5,7 @@ import type { MethodObject } from '../../method_object.ts';
 /**
  * Gamerule was changed
  */
-export type NotificationGamerulesUpdated = MethodObject<
+export type MinecraftNotificationGamerulesUpdated = MethodObject<
   'minecraft:notification/gamerules/updated',
   [{ gamerule : TypedGameRuleObject }]
 >
