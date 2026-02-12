@@ -1,6 +1,11 @@
 import type { Definition, ExtractParams, ExtractResult, NotificationObjectDefinition, ParamsNever } from './json_rpc/schema/index.ts';
 import type { minecraft } from './definitions/index.ts';
-import { ResponseObject } from './json_rpc/communication/response_object.ts';
+import type { PendingRequest } from './pending_request.ts';
+import type { ResponseObject } from './json_rpc/communication/response_object.ts';
+import type { NotificationObject } from './json_rpc/communication/notification_object.ts';
+import { isNotificationObject } from './json_rpc/communication/is_notification_object.ts';
+import { parseMessageEventData } from './json_rpc/communication/parse_message_event_data.ts';
+import { RequestObject } from './json_rpc/communication/request_object.ts';
 
 
 /**
@@ -17,7 +22,9 @@ interface ClientOptions {
 export class Client<Definitions extends Definition = minecraft.All> {
   private readonly ws : WebSocket;
   private readonly notificationListeners : Map<string, Set<(...params: unknown[]) => void>> = new Map();
+  private readonly pendingRequests : Map<string | number | null, PendingRequest<unknown>> = new Map();
   private requestId : number = 0;
+
   constructor(
     url : string,
     options? : ClientOptions
@@ -30,7 +37,35 @@ export class Client<Definitions extends Definition = minecraft.All> {
   }
 
   private handleMessageEvent(event : MessageEvent<string>) : void {
-    
+    const data = parseMessageEventData(event.data);
+
+    if (isNotificationObject(data)) {
+      const notification = data as NotificationObject;
+      const listeners = this.notificationListeners.get(notification.method);
+
+      if (listeners) {
+        const params = notification.params ? [notification.params] : []
+
+        for (const listener of listeners) {
+          listener(...params);
+        }
+      }
+    }
+
+    const response = data as ResponseObject;
+    const pendingRequest = this.pendingRequests.get(response.id);
+
+    if (!pendingRequest) {
+      return;
+    }
+
+    this.pendingRequests.delete(response.id);
+
+    if ('error' in response) {
+      pendingRequest.reject(response.error);
+    } else {
+      pendingRequest.resolve(response.result);
+    }
   }
 
   public call<MethodName extends Definitions['name']>(
@@ -39,8 +74,23 @@ export class Client<Definitions extends Definition = minecraft.All> {
   ) : Promise<ExtractResult<Definitions, MethodName>> {
     const id = ++this.requestId;
 
+    const request : RequestObject = {
+      jsonrpc: '2.0',
+      method,
+      id
+    };
+
+    if (params.length > 0) {
+      request.params = params[0];
+    }
+
+    this.ws.send(JSON.stringify(request));
+
     return new Promise((resolve, reject) => {
-      
+      this.pendingRequests.set(id, {
+        resolve,
+        reject
+      });
     });
   }
 
