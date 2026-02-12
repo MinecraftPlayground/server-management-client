@@ -75,7 +75,7 @@ export class Client<Definitions extends Definition = minecraft.All> {
       this.connection.addEventListener('error', (error) => reject(error));
     });
 
-    this.connection.addEventListener('message', this.handleMessageEvent);
+    this.connection.addEventListener('message', (event) => this.handleMessageEvent(event));
   }
 
   /**
@@ -119,6 +119,10 @@ export class Client<Definitions extends Definition = minecraft.All> {
     } else {
       pendingRequest.resolve(response.result);
     }
+  }
+
+  public close() : void {
+    this.connection.close();
   }
 
   /**
