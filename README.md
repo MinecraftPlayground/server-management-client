@@ -8,16 +8,16 @@ A Minecraft Server JSON-RPC TypeScript Client.
 
 ## Usage
 ```ts
-import { Client } from './index.ts';
+import { Client } from './client.ts'
 
-// Create a client instance
+
 const client = new Client('ws://localhost:25576', {
   token: 'my-secret-token'
 });
 
 // Call methods
 const allowlist = await client.call('minecraft:allowlist');
-console.log('Allowlisted players:', allowlist.allowlist);
+console.log('Whitelisted players:', allowlist.allowlist);
 
 // Listen for notifications
 client.addNotificationListener('minecraft:notification/players/joined', ({ player }) => {
@@ -26,8 +26,12 @@ client.addNotificationListener('minecraft:notification/players/joined', ({ playe
 ```
 
 ```ts
-// Managing server settings
-const client = new Client('ws://localhost:25576');
+import { Client } from './client.ts'
+
+
+const client = new Client('ws://localhost:25576', {
+  token: 'my-secret-token'
+});
 
 // Get current difficulty
 const { difficulty } = await client.call('minecraft:serversettings/difficulty');
@@ -38,8 +42,12 @@ await client.call('minecraft:serversettings/difficulty/set', { difficulty: 'hard
 ```
 
 ```ts
-// Managing players
-const client = new Client('ws://localhost:25576');
+import { Client } from './client.ts'
+
+
+const client = new Client('ws://localhost:25576', {
+  token: 'my-secret-token'
+});
 
 // Get all connected players
 const { players } = await client.call('minecraft:players');
@@ -56,4 +64,55 @@ await client.call('minecraft:players/kick', {
     message: { literal: 'You have been kicked' }
   }]
 });
+```
+
+## Defining custom methods and notifications
+```ts
+import { Client } from './client.ts'
+import type { MethodObjectDefinition } from './schema/index.ts'
+import type { minecraft } from './definitions/index.ts'
+
+
+/**
+ * Greet a player on the server
+ */
+type CustomPlayerGreetMethod = MethodObjectDefinition<
+  'custom:player/greet',
+  [{
+    player : minecraft.schema.PlayerObject,
+    message : string
+  }],
+  { player? : minecraft.schema.PlayerObject }
+>
+
+const client = new Client<minecraft.Extend<CustomPlayerGreetMethod>>('ws://localhost:25576', {
+  token: 'token-from-server.properties'
+});
+
+client.call('custom:player/greet', {
+  player: { id: 'uuid', name: 'PlayerName' },
+  message: 'Hello Player!'
+}).then(({player}) => { console.log(`Greeted player ${player.name}`) })
+```
+
+```ts
+import { Client } from './client.ts'
+import type { NotificationObjectDefinition } from './schema/index.ts'
+import type { minecraft } from './definitions/index.ts'
+
+/**
+ * Greet a player on the server
+ */
+type CustomPlayerGreetNotification = MethodObjectDefinition<
+  'custom:notification/player/greeted',
+  [{ player : PlayerObject }]
+>
+
+const client = new Client<minecraft.Extend<CustomPlayerGreetNotification>>('ws://localhost:25576', {
+  token: 'token-from-server.properties'
+});
+
+client.addNotificationListener('custom:notification/player/greeted', ({player}) => {
+  console.log(`Greeted player ${player.name}`)
+})
 ```
