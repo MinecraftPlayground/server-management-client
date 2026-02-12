@@ -7,6 +7,7 @@
  * ```ts
  * type AddToAllowlistParams = ParamsNever<'minecraft:allowlist/add'>;
  * // [{ add: PlayerObject[] }]
+ * 
  * type GetAllowlistParams = ParamsNever<'minecraft:allowlist'>;
  * // []
  * ```
