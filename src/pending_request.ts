@@ -1,4 +1,4 @@
-import type { ErrorObject } from './json_rpc/error_object.ts';
+import type { ErrorObject } from './json_rpc/communication/error_object.ts';
 
 
 export interface PendingRequest<Result> {
