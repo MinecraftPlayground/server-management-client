@@ -7,6 +7,7 @@ A Minecraft Server JSON-RPC TypeScript Client.
 
 
 ## Usage
+### Basics
 ```ts
 import { Client } from './client.ts'
 
@@ -25,6 +26,7 @@ client.addNotificationListener('minecraft:notification/players/joined', ({ playe
 });
 ```
 
+### Getting and setting values
 ```ts
 import { Client } from './client.ts'
 
@@ -67,6 +69,7 @@ await client.call('minecraft:players/kick', {
 ```
 
 ## Defining custom methods and notifications
+### Methods
 ```ts
 import { Client } from './client.ts'
 import type { MethodObjectDefinition } from './schema/index.ts'
@@ -95,6 +98,7 @@ client.call('custom:player/greet', {
 }).then(({player}) => { console.log(`Greeted player ${player.name}`) })
 ```
 
+### notifications
 ```ts
 import { Client } from './client.ts'
 import type { NotificationObjectDefinition } from './schema/index.ts'
