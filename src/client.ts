@@ -50,6 +50,8 @@ export class Client<Definitions extends Definition = minecraft.All> {
           listener(...params);
         }
       }
+
+      return;
     }
 
     const response = data as ResponseObject;
@@ -84,13 +86,13 @@ export class Client<Definitions extends Definition = minecraft.All> {
       request.params = params[0];
     }
 
-    this.ws.send(JSON.stringify(request));
-
     return new Promise((resolve, reject) => {
       this.pendingRequests.set(id, {
         resolve,
         reject
       });
+
+      this.ws.send(JSON.stringify(request));
     });
   }
 
