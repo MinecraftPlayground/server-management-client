@@ -105,7 +105,7 @@ import type { NotificationObjectDefinition } from './schema/index.ts'
 import type { minecraft } from './definitions/index.ts'
 
 /**
- * Greet a player on the server
+ * Get notified when the server greets a player
  */
 type CustomPlayerGreetNotification = MethodObjectDefinition<
   'custom:notification/player/greeted',
