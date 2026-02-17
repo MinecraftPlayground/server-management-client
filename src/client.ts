@@ -1,6 +1,6 @@
 import type { Definition, ExtractParams, ExtractResult, NotificationObjectDefinition } from './schema/index.ts';
 import type { minecraft } from './definitions/index.ts';
-import type { PendingRequest } from './pending_request.ts';
+import type { PendingRequest } from './communication/pending_request.ts';
 import type { ResponseObject } from './communication/response_object.ts';
 import type { NotificationObject } from './communication/notification_object.ts';
 import { isNotificationObject } from './communication/is_notification_object.ts';

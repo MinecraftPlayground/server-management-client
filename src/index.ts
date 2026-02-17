@@ -22,7 +22,6 @@
  *   console.log(`${player.name} joined the server`);
  * });
  * ```
- * 
  * @example
  * ```ts
  * import { Client } from '@minecraft-server/management-protocol';
@@ -39,7 +38,6 @@
  * // Set difficulty to hard
  * await client.call('minecraft:serversettings/difficulty/set', { difficulty: 'hard' });
  * ```
- * 
  * @example
  * ```ts
  * import { Client } from '@minecraft-server/management-protocol';

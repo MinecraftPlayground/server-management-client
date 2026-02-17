@@ -1,4 +1,4 @@
-import type { ErrorObject } from './communication/error_object.ts';
+import type { ErrorObject } from './error_object.ts';
 
 /**
  * Represents a pending request
