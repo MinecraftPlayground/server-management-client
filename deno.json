@@ -1,6 +1,7 @@
 {
   "name": "@minecraft-server/management-protocol",
   "version": "0.1.0",
+  "license": "LICENSE",
   "exports": {
     ".": "./src/index.ts",
     "./definitions": "./src/definitions/index.ts",
