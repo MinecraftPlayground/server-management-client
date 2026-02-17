@@ -1,0 +1,38 @@
+name: 'Publish to JSR'
+on:
+  push:
+    branches:
+      - 'main'
+
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: |
+          Dry run. Do not publish package.
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: 'Publish'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout repository'
+        uses: actions/checkout@v5
+
+      - name: 'Setup Deno'
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: 'v2.x'
+
+      - name: 'Publish package'
+        run: |
+          if [ "${{ github.event.inputs.dry }}" = "true" ]; then
+            deno publish --dry-run
+          else
+            deno publish
+          fi
