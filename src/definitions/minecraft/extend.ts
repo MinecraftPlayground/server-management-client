@@ -1,4 +1,4 @@
-import type { Definition } from '../../json_rpc/schema/index.ts';
+import type { Definition } from '../../schema/index.ts';
 import type { All as AllNotifications } from './notifications.ts';
 import type { All as AllMethods } from './methods.ts';
 

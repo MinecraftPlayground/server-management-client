@@ -1,11 +1,11 @@
-import type { Definition, ExtractParams, ExtractResult, NotificationObjectDefinition } from './json_rpc/schema/index.ts';
+import type { Definition, ExtractParams, ExtractResult, NotificationObjectDefinition } from './schema/index.ts';
 import type { minecraft } from './definitions/index.ts';
 import type { PendingRequest } from './pending_request.ts';
-import type { ResponseObject } from './json_rpc/communication/response_object.ts';
-import type { NotificationObject } from './json_rpc/communication/notification_object.ts';
-import { isNotificationObject } from './json_rpc/communication/is_notification_object.ts';
-import { parseMessageEventData } from './json_rpc/communication/parse_message_event_data.ts';
-import type { RequestObject } from './json_rpc/communication/request_object.ts';
+import type { ResponseObject } from './communication/response_object.ts';
+import type { NotificationObject } from './communication/notification_object.ts';
+import { isNotificationObject } from './communication/is_notification_object.ts';
+import { parseMessageEventData } from './communication/parse_message_event_data.ts';
+import type { RequestObject } from './communication/request_object.ts';
 import type { ClientOptions } from './client_options.ts';
 import type { ConnectionAddress } from './connection_address.ts';
 

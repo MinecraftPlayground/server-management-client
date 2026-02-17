@@ -1,4 +1,4 @@
-import type { NotificationObjectDefinition } from '../../../json_rpc/schema/index.ts';
+import type { NotificationObjectDefinition } from '../../../schema/index.ts';
 
 
 /**

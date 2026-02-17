@@ -1,5 +1,5 @@
 import type { TypedGameRuleObject, UntypedGameRuleObject } from '../schemas.ts';
-import type { MethodObjectDefinition } from '../../../json_rpc/schema/index.ts';
+import type { MethodObjectDefinition } from '../../../schema/index.ts';
 
 
 /**
