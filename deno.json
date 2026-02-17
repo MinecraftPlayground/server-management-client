@@ -1,4 +1,5 @@
 {
+  "name": "@minecraft-server/management-protocol",
   "version": "0.1.0",
   "exports": {
     ".": "./src/index.ts",

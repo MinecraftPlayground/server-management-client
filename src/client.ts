@@ -7,13 +7,8 @@ import { isNotificationObject } from './json_rpc/communication/is_notification_o
 import { parseMessageEventData } from './json_rpc/communication/parse_message_event_data.ts';
 import type { RequestObject } from './json_rpc/communication/request_object.ts';
 import type { ClientOptions } from './client_options.ts';
+import type { ConnectionAddress } from './connection_address.ts';
 
-/**
- * Valid connection address type.
- */
-type ConnectionAddress =
-  | `ws://${string}${string}`
-  | `wss://${string}${string}`
 
 /**
  * JSON-RPC 2.0 WebSocket client for communicating with a Minecraft server.
