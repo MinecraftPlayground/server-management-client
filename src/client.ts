@@ -46,7 +46,7 @@ export class Client<Definitions extends Definition = minecraft.All> {
   /**
    * Create a new JSON-RPC client.
    * 
-   * @param url WebSocket URL to connect to (ex. 'ws://localhost:25576')
+   * @param url WebSocket URL to connect to (ex. `'ws://localhost:25576'`)
    * @param options Optional configuration
    * 
    * @example
@@ -131,8 +131,8 @@ export class Client<Definitions extends Definition = minecraft.All> {
    * Close the WebSocket connection to the server.
    * 
    * This method cleanly closes the underlying WebSocket connection.
-   * After calling this method, the client instance should not be reused. Create a new client instance
-   * if you need to reconnect.
+   * After calling this method, the client instance should not be reused.
+   * Create a new client instance if you need to reconnect.
    * 
    * @param code Optional close code
    * @param reason Optional human-readable reason for closing the connection
@@ -142,7 +142,9 @@ export class Client<Definitions extends Definition = minecraft.All> {
    * import { Client } from '@minecraft-server/management-protocol';
    * 
    * 
-   * const client = new Client('ws://localhost:8080');
+   * const client = new Client('ws://localhost:8080', {
+   *   token: 'my-secret-token'
+   * });
    * 
    * // ... use the client ...
    * 
@@ -169,7 +171,7 @@ export class Client<Definitions extends Definition = minecraft.All> {
    * or rejects with an error if the server returns an error response.
    * 
    * @template MethodName Name of the method to call
-   * @param method Method name (ex. 'minecraft:players')
+   * @param method Method name (ex. `'minecraft:players'`)
    * @param params Method parameters (type-safe based on the method)
    * @returns Promise that resolves with the method result.
    * 
@@ -178,7 +180,9 @@ export class Client<Definitions extends Definition = minecraft.All> {
    * import { Client } from '@minecraft-server/management-protocol';
    * 
    * 
-   * const client = new Client('ws://localhost:25576');
+   * const client = new Client('ws://localhost:25576', {
+   *   token: 'my-secret-token'
+   * });
    *
    * // Method without parameters
    * const players = await client.call('minecraft:players');
@@ -188,7 +192,9 @@ export class Client<Definitions extends Definition = minecraft.All> {
    * import { Client } from '@minecraft-server/management-protocol';
    * 
    * 
-   * const client = new Client('ws://localhost:25576');
+   * const client = new Client('ws://localhost:25576', {
+   *   token: 'my-secret-token'
+   * });
    *
    * // Method with parameters
    * await client.call('minecraft:allowlist/add', {
@@ -236,7 +242,9 @@ export class Client<Definitions extends Definition = minecraft.All> {
    * import { Client } from '@minecraft-server/management-protocol';
    * 
    * 
-   * const client = new Client('ws://localhost:25576');
+   * const client = new Client('ws://localhost:25576', {
+   *   token: 'my-secret-token'
+   * });
    *
    * // Listen for player joined notifications
    * client.addNotificationListener('minecraft:notification/players/joined', ({ player }) => {
@@ -268,7 +276,9 @@ export class Client<Definitions extends Definition = minecraft.All> {
    * import { minecraft } from '@minecraft-server/management-protocol/definitions';
    * 
    * 
-   * const client = new Client('ws://localhost:25576');
+   * const client = new Client('ws://localhost:25576', {
+   *   token: 'my-secret-token'
+   * });
    *
    * const onPlayerJoined = ({ player } : { player : minecraft.schema.PlayerObject }) => {
    *   console.log(`${player.name} joined`);
